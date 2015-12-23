@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /hello                           controllers.Test1.hello()
+GET     /hello2/msj/:msj/version/:version controllers.Test1.hello2(msj:String, version: String)
+
+# resolviendo el ejercicio parte 2
+GET    /featured/lenguage/:preferredLanguage/app/:app/country/:country/state/:state controllers.GetFeatured.getFeatured(preferredLanguage, app, country, state)  
